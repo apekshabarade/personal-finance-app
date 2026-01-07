@@ -19,7 +19,9 @@ const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 app.use(cors({  origin: [
       "http://localhost:5173",
       "https://personal-finance-app-1-w38d.onrender.com
-    ],, credentials: true }));
+    ],methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+              credentials: true }));
 app.use(express.json());
 app.use(morgan('dev'));
 
