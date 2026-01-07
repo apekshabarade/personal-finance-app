@@ -1,8 +1,12 @@
 import axios from "axios";
 
+import axios from "axios";
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,  // ✅ FIXED FOR RENDER
+  baseURL: import.meta.env.VITE_API_URL,
+  withCredentials: false,   // <--- REQUIRED FOR RENDER
 });
+
 
 // 🔐 ALWAYS attach token BEFORE request
 api.interceptors.request.use(
