@@ -395,12 +395,32 @@ const Analytics = () => {
                       <span className="category-name">{category}</span>
                       <div className="category-bar-wrapper">
                         <div
-                          className="category-bar"
-                          style={{
-                            width: `${percentage}%`,
-                            backgroundColor: chartColors.pie[index % chartColors.pie.length],
-                          }}
-                        ></div>
+  className="category-bar"
+  style={{
+    width: `${percentage}%`,
+    backgroundColor:
+      amount > totalIncome
+        ? "#ff4d4d" // 🔴 red when category > total income
+        : chartColors.pie[index % chartColors.pie.length],
+    position: "relative",
+  }}
+>
+  {amount > totalIncome && (
+    <span
+      style={{
+        position: "absolute",
+        right: "10px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        color: "white",
+        fontWeight: "bold",
+        fontSize: "12px",
+      }}
+    >
+      ⚠ Overspending
+    </span>
+  )}
+</div>
                       </div>
                     </div>
                     <div className="category-amount">
