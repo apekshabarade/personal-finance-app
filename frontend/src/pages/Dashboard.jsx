@@ -81,6 +81,23 @@ const Dashboard = () => {
           <h3>Total Expense: ₹{totalExpense.toFixed(2)}</h3>
           <h3>Balance: ₹{balance.toFixed(2)}</h3>
           <p>{expensePercentage}% of income spent</p>
+          {/* 🚨 ALERT IF EXPENSE > INCOME */}
+{totalExpense > totalIncome && (
+  <div
+    style={{
+      backgroundColor: "#ff4d4d",
+      color: "white",
+      padding: "12px 16px",
+      borderRadius: "8px",
+      marginTop: "15px",
+      fontWeight: "bold",
+      boxShadow: "0 4px 10px rgba(255,0,0,0.3)",
+    }}
+     >
+    ⚠️ Warning: Your total expenses are higher than your total income!
+    You are overspending.
+  </div>
+)}
         </>
       )}
     </div>
