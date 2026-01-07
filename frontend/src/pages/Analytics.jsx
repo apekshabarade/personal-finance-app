@@ -123,6 +123,24 @@ const Analytics = () => {
         <h1>📊 Financial Analytics</h1>
         <p className="analytics-subtitle">Insights into your financial patterns</p>
       </div>
+      {/* 🚨 ALERT IF EXPENSE > INCOME */}
+{totalExpense > totalIncome && (
+  <div
+    style={{
+      backgroundColor: "#ff4d4d",
+      color: "white",
+      padding: "14px 18px",
+      borderRadius: "12px",
+      marginBottom: "20px",
+      fontWeight: "bold",
+      boxShadow: "0 4px 10px rgba(255,0,0,0.3)",
+      display: "inline-block"
+    }}
+  >
+    ⚠ Overspending Alert: Your total expenses are higher than your total income!
+  </div>
+)}
+
 
       <div className="analytics-summary">
         <div className="summary-card">
