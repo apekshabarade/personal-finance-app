@@ -16,7 +16,10 @@ const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 
 // Middleware
-app.use(cors({ origin: CLIENT_URL, credentials: true }));
+app.use(cors({  origin: [
+      "http://localhost:5173",
+      "https://personal-finance-app-1-w38d.onrender.com
+    ],, credentials: true }));
 app.use(express.json());
 app.use(morgan('dev'));
 
